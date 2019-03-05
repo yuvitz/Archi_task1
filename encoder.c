@@ -22,9 +22,11 @@ int main(int argc, char **argv)
 	c=fgetc(stdin);
 
 	 while(c!=EOF){
+	 	if(deb_mode==1)
+	 			fprintf(stderr, "0x%x\t", c);
 	 	if ((c>64) & (c<91)){
  			if(deb_mode==1)
-	 			fprintf(stderr, "0x%x\n", c);
+	 			fprintf(stderr, "0x%x\n", c+32);
 	 		putc(c+32, stdout);
 	 	}
 	 	else{
@@ -34,5 +36,4 @@ int main(int argc, char **argv)
 	 	}
 	 c=fgetc(stdin);
 	}
-//   return 0;
 }
